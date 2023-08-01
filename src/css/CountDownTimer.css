@@ -1,0 +1,16 @@
+.count-down-timer {
+  margin-top: 20px;
+}
+.count-down-timer p {
+  margin: 0;
+}
+.count-down-timer input {
+  padding: 5px;
+  width: 50px;
+  display: block;
+}
+.count-down-timer button {
+  margin-top: 5px;
+  width: 150px;
+  display: block;
+}

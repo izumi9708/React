@@ -1,7 +1,10 @@
 import * as React from 'react';
 import {useState,useEffect} from 'react';
 import TodoList from './TodoList';
-import {todos} from './todos';
+import {todos} from './ts/todos';
+import UserForm from './UserForm';
+import NumberCounter from './NumberCounter';
+import CountDownTimer from './CountDownTimer';
 
 function App(){
   // useEffect(() => {
@@ -13,6 +16,9 @@ function App(){
   return (
     <>
       <TodoList todos={todos}/>
+      <UserForm/>
+      <NumberCounter/>
+      <CountDownTimer/>
     </>
   )
 }

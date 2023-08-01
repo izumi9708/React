@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useState,useEffect} from 'react';
-import './TodoList.css';
+import './css/TodoList.css';
 
 // 以下の要件を満たすReactコンポーネントを作成してください。
 // 要件：
@@ -20,7 +20,7 @@ interface PropsObj {
 }
 
 function TodoList(props:PropsObj){
-  const [todos,setTodos] = useState(props.todos);
+  const [todos,setTodos] = useState<Todos[]>(props.todos);
 
   function changeCompleted (target:HTMLInputElement) {
     const targetId = target.closest('label').id;
