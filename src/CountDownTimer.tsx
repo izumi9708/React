@@ -16,11 +16,12 @@ function CountDownTimer(){
   const [timer,setTimer] = useState<number>();
   const [timerStart,setTimerStart] = useState<boolean>(false);
 
-  const countStart = (event) => {
-    const input = event.target.closest('.count-down-timer').querySelector('input');
+  type CountStart = (event:React.MouseEvent<HTMLButtonElement> ) => void;
+  const countStart:CountStart = (event) => {
+    const input = (event.target as HTMLElement).closest('.count-down-timer').querySelector('input');
 
     if(!timerStart){
-      if(isNaN(input.value) || input.value == ''){
+      if(!input.value.match(/^[1-9]\d*$/u)){
         alert('数字を入力してください\n数字は半角数字で入力してください');
       }else {
         setTimerStart(!timerStart);
@@ -37,9 +38,8 @@ function CountDownTimer(){
     if(timerStart){
       if(timer > 0){
         setTimeout(() => {
-          setTimer(timer - 1)
-          console.log('aaa')
-        },1000)
+          setTimer(timer - 1);
+        },1000);
       }
     }
   },[timer])
@@ -53,7 +53,7 @@ function CountDownTimer(){
         {timer > 0 ? timer : 'タイムアップ'}
       </p>
     :
-      <input type="text"/>
+      <label><input type="text"/>秒</label>
     }
     
       <button type="button" className="count-down-btn" onClick={countStart}>{timerStart ? 'リセット' : 'スタート！'}</button>

@@ -5,6 +5,7 @@ import {todos} from './ts/todos';
 import UserForm from './UserForm';
 import NumberCounter from './NumberCounter';
 import CountDownTimer from './CountDownTimer';
+import ToggleSwitch from './ToggleSwitch';
 
 function App(){
   // useEffect(() => {
@@ -19,6 +20,7 @@ function App(){
       <UserForm/>
       <NumberCounter/>
       <CountDownTimer/>
+      <ToggleSwitch/>
     </>
   )
 }
