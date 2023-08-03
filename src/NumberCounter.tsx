@@ -28,6 +28,7 @@ function NumberCounter(){
 
   return (
     <div className="counter-wrap">
+      数字カウンター
       <div className="current-number">{number}</div>
       <div className="btn-wrap">
         <button type="button" className="add-btn" onClick={() => clickCounter('add')}>＋</button>
