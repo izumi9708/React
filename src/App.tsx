@@ -8,6 +8,7 @@ import CountDownTimer from './CountDownTimer';
 import ToggleSwitch from './ToggleSwitch';
 import NumberList from './NumberList';
 import {numbers} from './ts/NumberList';
+import ColorPicker from './ColorPicker';
 
 function App(){
   // useEffect(() => {
@@ -24,6 +25,7 @@ function App(){
       <CountDownTimer/>
       <ToggleSwitch/>
       <NumberList numbers={numbers}/>
+      <ColorPicker/>
     </>
   )
 }
