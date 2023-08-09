@@ -37,7 +37,7 @@ function TodoList(props:PropsObj){
 
 
   return (
-    <div className="todos-wrap">
+    <div className="todos-wrap wrap">
       <p className="title">todoリスト</p>
       <div className="todos-list">
         {todos.map(val => {

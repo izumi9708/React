@@ -27,7 +27,7 @@ function NumberCounter(){
   }
 
   return (
-    <div className="counter-wrap">
+    <div className="counter-wrap wrap">
       数字カウンター
       <div className="current-number">{number}</div>
       <div className="btn-wrap">

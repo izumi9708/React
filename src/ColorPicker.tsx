@@ -23,7 +23,7 @@ function ColorPicker(){
   }
 
   return (
-    <div className="color-picker">
+    <div className="color-picker wrap">
       カラーピッカー
       <div className="select-wrap">
         <div className="select-wrap-item">
