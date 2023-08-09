@@ -31,7 +31,7 @@ function UserForm(){
   }
 
   return (
-    <div className="user-form-wrap"  style={{marginTop:'20px'}}>
+    <div className="user-form-wrap wrap"  style={{marginTop:'20px'}}>
       ユーザーフォーム
       <label>名前：<input name="name" type="text" onChange={(e) => setName(e.target.value)} /></label>
       <label>年齢：<input name="age" type="text" onChange={(e) => setAge(e.target.value)}/></label>

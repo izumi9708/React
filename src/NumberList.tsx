@@ -14,13 +14,12 @@ type Props = {
 }
 
 function NumberList(props:Props){
-  console.log(props)
   return (
-    <div className="number-list">
+    <div className="number-list wrap">
       ナンバーリスト
       {props.numbers.map(list => {
         return (
-          <div className="numbers-wrap">
+          <div key={list} className="numbers-wrap">
             <div>{list}</div>
           </div>
         )

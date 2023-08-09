@@ -18,7 +18,7 @@ function ToggleSwitch(){
   }
 
   return (
-    <div className="toggle-switch">
+    <div className="toggle-switch wrap">
       トグルスイッチ
       {toggleState ? (
         <div className="switch-btn toggle-active" onClick={changeToggle}>

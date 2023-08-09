@@ -46,7 +46,7 @@ function CountDownTimer(){
 
 
   return (
-    <div className="count-down-timer">
+    <div className="count-down-timer wrap">
     カウントダウンタイマー
    {timerStart ? 
       <p>

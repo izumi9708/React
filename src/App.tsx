@@ -1,7 +1,5 @@
 import * as React from 'react';
 import {useState,useEffect} from 'react';
-import TodoList from './TodoList';
-import {todos} from './ts/todos';
 import UserForm from './UserForm';
 import NumberCounter from './NumberCounter';
 import CountDownTimer from './CountDownTimer';
@@ -9,6 +7,8 @@ import ToggleSwitch from './ToggleSwitch';
 import NumberList from './NumberList';
 import {numbers} from './ts/NumberList';
 import ColorPicker from './ColorPicker';
+import FilteredList from './FilteredList';
+import {emailList} from './ts/FilteredList';
 
 function App(){
   // useEffect(() => {
@@ -19,13 +19,13 @@ function App(){
 
   return (
     <>
-      <TodoList todos={todos}/>
       <UserForm/>
       <NumberCounter/>
       <CountDownTimer/>
       <ToggleSwitch/>
       <NumberList numbers={numbers}/>
       <ColorPicker/>
+      <FilteredList list={emailList}/>
     </>
   )
 }
