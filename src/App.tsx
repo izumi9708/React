@@ -9,6 +9,8 @@ import {numbers} from './ts/NumberList';
 import ColorPicker from './ColorPicker';
 import FilteredList from './FilteredList';
 import {emailList} from './ts/FilteredList';
+import ShoppingCart from './ShoppingCart';
+import {productsData} from './ts/ShoppingCart';
 
 function App(){
   // useEffect(() => {
@@ -26,6 +28,7 @@ function App(){
       <NumberList numbers={numbers}/>
       <ColorPicker/>
       <FilteredList list={emailList}/>
+      <ShoppingCart products={productsData}/>
     </>
   )
 }
