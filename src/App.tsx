@@ -1,16 +1,14 @@
-import * as React from 'react';
+import * as React           from 'react';
 import {useState,useEffect} from 'react';
-import UserForm from './UserForm';
-import NumberCounter from './NumberCounter';
-import CountDownTimer from './CountDownTimer';
-import ToggleSwitch from './ToggleSwitch';
-import NumberList from './NumberList';
-import {numbers} from './ts/NumberList';
-import ColorPicker from './ColorPicker';
-import FilteredList from './FilteredList';
-import {emailList} from './ts/FilteredList';
-import ShoppingCart from './ShoppingCart';
-import {productsData} from './ts/ShoppingCart';
+import CountDownTimer       from './CountDownTimer';
+import ToggleSwitch         from './ToggleSwitch';
+import {numbers}            from './ts/NumberList';
+import ColorPicker          from './ColorPicker';
+import FilteredList         from './FilteredList';
+import {emailList}          from './ts/FilteredList';
+import ShoppingCart         from './ShoppingCart';
+import {productsData}       from './ts/ShoppingCart';
+import SearchAccount        from './SearchGithubAccount';
 
 function App(){
   // useEffect(() => {
@@ -21,14 +19,12 @@ function App(){
 
   return (
     <>
-      <UserForm/>
-      <NumberCounter/>
       <CountDownTimer/>
       <ToggleSwitch/>
-      <NumberList numbers={numbers}/>
       <ColorPicker/>
       <FilteredList list={emailList}/>
       <ShoppingCart products={productsData}/>
+      <SearchAccount/>
     </>
   )
 }
