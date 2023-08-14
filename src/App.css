@@ -1,0 +1,11 @@
+.header-menu {
+  border: solid 1px rgb(179, 179, 179);
+  padding: 5px;
+  border-radius: 5px;
+}
+.link-item {
+  margin-left: 10px;
+}
+.link-item:first-of-type {
+  margin-left: 0;
+}
