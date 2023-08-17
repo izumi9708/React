@@ -5,7 +5,16 @@
 }
 .link-item {
   margin-left: 10px;
+  padding: 5px;
+  border: solid 1px rgb(11, 46, 141);
+  border-radius: 5px;
+  color: rgb(11, 46, 141);
+  text-decoration: none;
 }
 .link-item:first-of-type {
   margin-left: 0;
+}
+.active {
+  background-color: rgb(11, 46, 141);
+  color: #fff;
 }

@@ -2,7 +2,10 @@ import * as React from 'react';
 
 function Top(){
   return (
-    <div>Hello</div>
+    <>
+    <h1>コンポーネント問題集</h1>
+    <p>メニューをクリックするとコンポーネント集を切り替えることができます</p>
+    </>
   )
 }
 
