@@ -10,11 +10,6 @@ import {productsData}       from './ts/ShoppingCart';
 import SearchAccount        from './SearchGithubAccount';
 
 function App1(){
-  // useEffect(() => {
-  //   fetch('https://api.github.com/users/izumi9708')
-  //   .then(res => res.json())
-  //   .then(res => console.log(res))
-  // })
 
   return (
     <>
