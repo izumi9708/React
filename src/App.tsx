@@ -41,7 +41,7 @@ function App(){
     <BrowserRouter>
       <div className="header-menu">
         <p>選択してください</p>
-        <Link className="link-item" data-path="Top" to="/Top" onClick={toggleActive}>
+        <Link className="link-item" data-path="Top" to="/" onClick={toggleActive}>
           トップ
         </Link>
         <Link className="link-item" data-path="App1" to="/App1/App1" onClick={toggleActive}>
@@ -54,7 +54,7 @@ function App(){
 
 
       <Switch>
-        <Route exact path="/Top"><Top/></Route> 
+        <Route exact path="/"><Top/></Route> 
         <Route path="/App1/App1"><App1/></Route>
         <Route path="/App2/App2"><App2/></Route>
       </Switch>
