@@ -11,13 +11,24 @@ import './css/Quiz.css';
 // 次の質問へ: 正解判定が表示された後、次のクイズの質問と選択肢を表示してください。
 // 最終結果: クイズが終了したら、ユーザーの正解数と全体の質問数を表示してください。
 
-function Quiz(props){
-  const [data,setData] = useState(props.data);
-  const [result,setResult] = useState([]);
-  const [countQuestion,setCountQuestion] = useState(0);
+type Props = {
+  data:QuizData[]
+}
 
-  const selectAnswer = (e,index) => {
-    const answer = e.target.closest('label').textContent;
+type QuizData = {
+  correctAnswer:string;
+  options:string[];
+  question:string;
+}
+
+function Quiz(props:Props){
+  const [data,setData] = useState<QuizData[]>(props.data);
+  const [result,setResult] = useState<string[]>([]);
+  const [countQuestion,setCountQuestion] = useState<number>(0);
+
+  type SelectAnswer = (e:React.ChangeEvent<HTMLInputElement>,index:number) => void;
+  const selectAnswer:SelectAnswer = (e,index) => {
+    const answer = (e.target as HTMLElement).closest('label').textContent;
     
     if(data[index].correctAnswer == answer){
       setResult([...result,'正解'])
