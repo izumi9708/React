@@ -63,7 +63,7 @@ function WeatherApp(){
 
   return (
     <div className="weather-app wrap">
-      ウェザーアプリ
+      天気情報アプリケーション
       <div className="weather-content">
         <p className="weather-text">国名、都市名を半角英語で入力してください</p>
         <input className="weather-input" type="text" placeholder="例）tokyo"/>
