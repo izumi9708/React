@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {useState,useEffect} from 'react';
-import DisplayAnimeList from './DisplayAnimeList';
+import {useState,useEffect,useContext} from 'react';
+import DisplayAnimeList from './DisplayAnimeList';   
+import {AppContext} from './App2';
 
 import './css/SearchAnime.css';
 
@@ -10,15 +11,22 @@ type AnimeList = {
     images:{jpg:{image_url:string}};
     year:string;
     type:string;
-    title_japanese:string
+    title_japanese:string;
     mal_id:number
   }[]
+}
+
+type Test = {
+  testState:string;
+  setState:React.Dispatch<React.SetStateAction<string>>;
 }
 
 function SearchAnime(){
   const [animeList,setAnimeList] = useState<AnimeList>();
   const [isLoding,setLoding] = useState<boolean>();
-   
+  const { testState, setState } = useContext<Test>(AppContext); // Contextを使用
+
+
   type GetSearchStation<T> = (name:string) => Promise<T>;
   const getSearchStation:GetSearchStation<AnimeList> = async(name) => {
     try {

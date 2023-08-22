@@ -1,16 +1,23 @@
 import * as React from 'react';
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useContext} from 'react';
 import {AnimeList} from './SearchAnime';
+import {AppContext} from './App2';
 
 import './css/SearchAnime.css';
 
 type Props = {
   data:AnimeList
 }
+type Test = {
+  testState:string;
+  setState:React.Dispatch<React.SetStateAction<string>>;
+}
+
 
 function DisplayAnimeList(props:Props){
   const {data} = props.data;
-
+  const { testState, setState } = useContext<Test>(AppContext); // Contextを使用
+  
   return (
     <div className="display-list">
       {data.map(item => {
