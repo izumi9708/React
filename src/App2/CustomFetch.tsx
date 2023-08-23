@@ -1,5 +1,6 @@
-export async function useFetch(url){
-  const result = await fetch(url)
 
-  return result.json();
+export async function useFetch(url:string):Promise<Response>{
+  return await fetch(url)
 }
+
+export default useFetch;

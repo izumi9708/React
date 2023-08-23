@@ -8,6 +8,7 @@ import {quizData} from './ts/Quiz';
 import ArticleIndex from './ArticleIndex';
 import SearchAnime from './SearchAnime';
 import UseAuth from './UseAuth';
+import DamyFetch from './DamyFetch';
 
 export const AppContext = createContext({});
 
@@ -24,6 +25,7 @@ function App2(){
       <SearchAnime/>
       {/* <UseAuth/> */}
       </AppContext.Provider>
+      {/* <DamyFetch/> */}
     </>
   )
 }
