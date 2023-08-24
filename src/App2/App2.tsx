@@ -9,6 +9,7 @@ import ArticleIndex from './ArticleIndex';
 import SearchAnime from './SearchAnime';
 import UseAuth from './UseAuth';
 import DamyFetch from './DamyFetch';
+import BlogPostList from './BlogPostList';
 
 export const AppContext = createContext({});
 
@@ -26,6 +27,7 @@ function App2(){
       {/* <UseAuth/> */}
       </AppContext.Provider>
       {/* <DamyFetch/> */}
+      {/* <BlogPostList/> */}
     </>
   )
 }

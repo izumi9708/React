@@ -28,6 +28,8 @@ function DamyFetch(){
     .then(res => setData(res))
   },[])
 
+  console.log(data)
+
   return (
     <div>
       {status === 200 
