@@ -4,6 +4,10 @@ p {
 .wrap {
   width: 500px;
 }
+.file-name {
+  font-size: 14px;
+  color: rgb(88, 88, 88);
+}
 
 button {
   background-color: #410ed3;

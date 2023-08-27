@@ -39,7 +39,7 @@ function ArticleIndex(){
 
   return (
     <div className="article wrap">
-      記事閲覧アプリケーション
+      記事閲覧アプリケーション<span className="file-name">(ArticleIndex.tsx)</span>
       <div className="article-content">
       <BrowserRouter>
         <Switch>

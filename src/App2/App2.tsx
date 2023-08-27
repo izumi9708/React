@@ -10,6 +10,7 @@ import SearchAnime from './SearchAnime';
 import UseAuth from './UseAuth';
 import DamyFetch from './DamyFetch';
 import BlogPostList from './BlogPostList';
+import ThemeContextComponent from './ThemeContextComponent';
 
 export const AppContext = createContext({});
 
@@ -28,6 +29,8 @@ function App2(){
       </AppContext.Provider>
       {/* <DamyFetch/> */}
       {/* <BlogPostList/> */}
+      <ThemeContextComponent/>
+      
     </>
   )
 }
