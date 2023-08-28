@@ -2,6 +2,7 @@ import * as React  from 'react';
 import './App.css';
 import App1 from './App1/App1';
 import App2 from './App2/App2';
+import App3 from './App3/App3';
 import Top from './Top';
 
 import {useState,useEffect} from 'react';
@@ -50,6 +51,9 @@ function App(){
         <Link className="link-item" data-path="App2" to="/App2/App2" onClick={toggleActive}>
           App2へ
         </Link>
+        <Link className="link-item" data-path="App3" to="/App3/App3" onClick={toggleActive}>
+          App3へ
+        </Link>
       </div>
 
 
@@ -57,6 +61,7 @@ function App(){
         <Route exact path="/"><Top/></Route> 
         <Route path="/App1/App1"><App1/></Route>
         <Route path="/App2/App2"><App2/></Route>
+        <Route path="/App3/App3"><App3/></Route>
       </Switch>
 
     </BrowserRouter>

@@ -63,7 +63,7 @@ function Quiz(props:Props){
   
   return (
     <div className="quiz-wrap wrap">
-      クイズアプリケーション
+      クイズアプリケーション<span className="file-name">(Quiz.tsx)</span>
       {data.length === countQuestion
       ? 
         (<div className="result">
