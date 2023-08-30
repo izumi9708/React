@@ -4,3 +4,20 @@
   padding: 10px;
   border-radius: 5px;
 }
+.form-item {
+  border-top: solid 1px rgb(197, 197, 197);
+  padding-top: 5px;
+  margin-top: 10px;
+}
+.form-item:first-of-type {
+  border: none;
+  margin-top: 0;
+}
+.form-item input {
+  width: 300px;
+}
+.user-form-content {
+  border: solid 1px rgb(197, 197, 197);
+  border-radius: 5px;
+  padding: 10px;
+}
