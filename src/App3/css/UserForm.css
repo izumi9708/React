@@ -21,3 +21,29 @@
   border-radius: 5px;
   padding: 10px;
 }
+.material-symbols-outlined {
+  font-size: 23px;
+}
+.form-item label {
+  position: relative;
+}
+.form-item .material-symbols-outlined {
+  position: absolute;
+  top: -1px;
+  right: 5px;
+  cursor: pointer;
+}
+.form-btn-wrap {
+  margin-top: 20px;
+}
+.form-btn-wrap button {
+  width: 200px;
+}
+.form-item .open {
+  display: none;
+}
+.err {
+  font-size: 13px;
+  color: red;
+  display: block;
+}
