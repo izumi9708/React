@@ -13,6 +13,9 @@ import './css/UserForm.css';
 
 function UserForm(){
 
+  const [state,setState] = useState('input');
+  const [formData,setFormData] = useState<FormData>();
+
   type DisplayPass  = (event:React.MouseEvent<HTMLSpanElement>) => void;
   const displayPass:DisplayPass = (event) => {
     const {target} = event;
@@ -47,68 +50,138 @@ function UserForm(){
 
       if(!err)name.closest('div').appendChild(errMsg);
       errCount++;
+
+    }else {
+      const err    = name.closest('div').querySelector('.err');
+      if(err)err.remove();
     }
 
-    if(name.value == ''){
-      const err    = name.closest('div').querySelector('.err');
+    if(!/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/.test(mail.value)){
+      const err    = mail.closest('div').querySelector('.err');
       const errMsg = document.createElement('span');
       errMsg.classList.add('err')
-      errMsg.textContent = '入力してください';
+      errMsg.textContent = '正しい形式で入力してください';
 
-      if(!err)name.closest('div').appendChild(errMsg);
+      if(!err)mail.closest('div').appendChild(errMsg);
       errCount++;
+
+    }else {
+      const err    = mail.closest('div').querySelector('.err');
+      if(err)err.remove();
     }
 
-    if(name.value == ''){
-      const err    = name.closest('div').querySelector('.err');
+    if(!/^[a-zA-Z0-9!+?_]+$/.test(pass.value)){
+      const err    = pass.closest('div').querySelector('.err');
       const errMsg = document.createElement('span');
       errMsg.classList.add('err')
-      errMsg.textContent = '入力してください';
+      errMsg.textContent = '半角英数字で入力してください';
 
-      if(!err)name.closest('div').appendChild(errMsg);
+      if(!err)pass.closest('div').appendChild(errMsg);
       errCount++;
+
+    }else {
+      const err    = pass.closest('div').querySelector('.err');
+      if(err)err.remove();
     }
+
+    if(errCount == 0){
+      const form = new FormData();
+      form.append('name',name.value);
+      form.append('mail',mail.value);
+      form.append('pass',pass.value);
+
+      setFormData(form);
+      setState('confirm');
+    
+    }
+
+  }
+
+  if(formData){
+    
   }
 
   return (
     <div className="user-form-wrap wrap">
       ユーザーフォーム（作成中）
       <div className="user-form-content">
-        <div className="form-item">
-          <p>ユーザー名</p>
-          <label>
-            <input type="text" placeholder="例）山田太郎" name="name"/>
-          </label>
-        </div>
-        <div className="form-item">
-          <p>メールアドレス</p>
-          <label>
-            <input type="text" placeholder="例）xxxx@xxx.com" name="mail"/>
-          </label>
-        </div>
-        <div className="form-item">
-          <p>パスワード</p>
-          <label>
-            <input type="password" placeholder="半角英数字" name="pass"/>
-            <span 
-              className="material-symbols-outlined close"
-              onClick={displayPass}
-            >
-              visibility
-            </span>
-            <span 
-              className="material-symbols-outlined open"
-              onClick={displayPass}
-            >
-              visibility_off
-            </span>       
-          </label>
-        </div>
+        {
+          state === 'input' 
+          ?
+          (
+            <>
+            <div className="form-item">
+              <p>ユーザー名</p>
+              <label>
+                <input type="text" placeholder="例）山田太郎" name="name"/>
+              </label>
+            </div>
+            <div className="form-item">
+              <p>メールアドレス</p>
+              <label>
+                <input type="text" placeholder="例）xxxx@xxx.com" name="mail"/>
+              </label>
+            </div>
+            <div className="form-item">
+              <p>パスワード</p>
+              <label>
+                <input type="password" placeholder="半角英数字" name="pass"/>
+                <span 
+                  className="material-symbols-outlined close"
+                  onClick={displayPass}
+                >
+                  visibility
+                </span>
+                <span 
+                  className="material-symbols-outlined open"
+                  onClick={displayPass}
+                >
+                  visibility_off
+                </span>       
+              </label>
+            </div>
+            </>
+          )
+          : state === 'confirm' ?
+          (
+            <>
+            <div className="form-item">
+              <p>ユーザー名</p>
+              <p>{String(formData.get('name'))}</p>
+            </div>
+            <div className="form-item">
+              <p>メールアドレス</p>
+              <p>{String(formData.get('mail'))}</p>
+            </div>
+            <div className="form-item">
+              <p>パスワード</p>
+              <p>{String(formData.get('pass'))}</p>
+            </div>
+            </>
+          )
+          :
+          (
+            <div>ユーザーの登録が完了しました。</div>
+          )
+        }
 
         <div className="form-btn-wrap">
+          {
+          state === 'input' 
+          ?
           <button type="button" className="form-btn"
             onClick={sendForm}
-          >確認</button>  
+          >確認</button>
+          : state === 'confirm' ?
+          <button type="button" className="form-btn"
+            onClick={() => setState('send')}
+          >送信</button>
+          :
+          <button type="button" className="form-btn"
+            onClick={() => setState('input')}
+          >トップへ</button>
+          }
+            
         </div> 
       </div>
     </div>
