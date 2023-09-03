@@ -98,7 +98,13 @@ function UserForm(){
   }
 
   if(formData){
-    
+    const pass = formData.get('pass') as string;
+    const passArr = pass.split('');
+    const shift = passArr.shift();
+    const pop   = passArr.pop();
+
+    const mapArr = passArr.map(val => '●');
+    formData.set('display_pass',[shift,...mapArr,pop].join(''));
   }
 
   return (
@@ -144,20 +150,23 @@ function UserForm(){
           )
           : state === 'confirm' ?
           (
-            <>
+            <form>
             <div className="form-item">
               <p>ユーザー名</p>
               <p>{String(formData.get('name'))}</p>
+              <input type="hidden" name="name" value={String(formData.get('name'))}/>
             </div>
             <div className="form-item">
               <p>メールアドレス</p>
               <p>{String(formData.get('mail'))}</p>
+              <input type="hidden" name="mail" value={String(formData.get('mail'))}/>
             </div>
             <div className="form-item">
               <p>パスワード</p>
-              <p>{String(formData.get('pass'))}</p>
+              <p>{String(formData.get('display_pass'))}</p>
+              <input type="hidden" name="pass" value={String(formData.get('pass'))}/>
             </div>
-            </>
+            </form>
           )
           :
           (
